@@ -44,7 +44,7 @@ public class BoardAdvanceServiceImpl implements BoardAdvanceService {
 	@Override
 	public boolean updateBoard(BoardAdvanceDTO bdto) throws Exception {
 		boolean isSuccess = false;
-		if (boardDAO.validateUserCheck(bdto) != null) {
+		if (boardDAO.validateUserCheck(bdto) != null) { //num, pw 맞는거 조회
 			isSuccess = true;
 			boardDAO.updateBoard(bdto);
 		}

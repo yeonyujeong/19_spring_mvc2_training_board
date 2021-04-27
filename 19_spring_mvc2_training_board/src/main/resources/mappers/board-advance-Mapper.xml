@@ -149,6 +149,8 @@
 			WHERE 
 					REF = #{ref} AND RE_STEP > #{reStep}
 		]]>
+		
+		<!-- 댓글을 다려는 위치 밑에있는 댓글들의 step을 1씩 늘리기 -->
 	</update>
 	
 	<!-- 게시글을 삭제하는 쿼리 -->
@@ -188,7 +190,7 @@
 				(SELECT 
 					MAX(NUM) + 1 
 				FROM 
-					BOARD_ADVANCE AS B),
+					BOARD_ADVANCE AS B),	<!-- 마지막 글의 num 찾아서 +1 해서 num 입력 -->
 			    #{writer},
 			    #{email},
 			    #{subject},
