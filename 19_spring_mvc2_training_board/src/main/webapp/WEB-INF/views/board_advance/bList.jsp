@@ -123,13 +123,13 @@
 	                                            <th>View</th>
 	                                        </tr>
 	                                    </thead>
-	                                    <tbody>
-	                                        <c:set var="order" value="${totalBoardCount - (currentPageNumber-1) * onePageViewCount}"/>
+	                                    <tbody>                           
+	                                        <c:set var="order" value="${totalBoardCount - (currentPageNumber-1) * onePageViewCount}"/><!-- 전체글 몇개인지 -->
 	                                        <c:forEach var="bdto" items="${boardList}">	                                        	
 												<tr>
 													<td><fmt:parseNumber integerOnly="true" value="${order}"/></td>	<c:set var="order" value="${order - 1}"/>
 													<td>
-														 <c:if test="${bdto.reStep > 1}">
+														 <c:if test="${bdto.reStep > 1}"> <!-- 댓글이면 -->
 														 	<c:forEach var="j" begin="0" end="${(bdto.reLevel-1 ) * 5 }">
 														 		&nbsp;
 														 	</c:forEach>
